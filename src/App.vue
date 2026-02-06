@@ -1,19 +1,38 @@
 <template>
-  
-    <h1>Our Team</h1>
-    <br>
-    <div class="container">
-      <UserCard name="Abebe" role="Frontend Developer" />
-      <UserCard name="Kebede" role="Backend Developer" />
-      <UserCard name="Nahusenay" role="UI Designer" />
-    </div>
-  
+  <h1>Our Team</h1>
+  <br>
+
+  <div class="container">
+    <UserCard
+      name="Abebe"
+      role="Frontend Developer"
+      status="online"
+      @view-profile="showProfile"
+    />
+
+    <UserCard
+      name="Kebede"
+      role="Backend Developer"
+      status="offline"
+      @view-profile="showProfile"
+    />
+
+    <UserCard
+      name="chala"
+      role="UI Designer"
+      status="online"
+      @view-profile="showProfile"
+    />
+  </div>
 </template>
 
 <script setup>
 import UserCard from './components/UserCard.vue'
-</script>
 
+function showProfile(name) {
+  alert(`profile of ${name}`)
+}
+</script>
 <style>
 body {
   justify-content: center;
