@@ -1,40 +1,38 @@
-<script setup>
-import { ref } from 'vue'
-const name = ref('')
-</script>
-
 <template>
   
-<div>
-    <input v-model="name" placeholder="Type your name" />
-</div>
-
-<br>
-
-<div>
-
-  <p v-if="name">
-    Hello {{ name }}, this is day 2!
-  </p>
+    <h1>Our Team</h1>
+    <br>
+    <div class="container">
+      <UserCard name="Abebe" role="Frontend Developer" />
+      <UserCard name="Kebede" role="Backend Developer" />
+      <UserCard name="Nahusenay" role="UI Designer" />
+    </div>
   
-</div>
 </template>
 
+<script setup>
+import UserCard from './components/UserCard.vue'
+</script>
+
 <style>
-.container {
+body {
+  justify-content: center;
+  align-items: center;
+  margin: 0;      
+}
+
+h1 {
+  font: bold 2.5em sans-serif;
+  color: white;
   text-align: center;
+  margin: 0 0 40px 0;
 }
 
-p {
-  font-weight: bold;
-  font-size: 20px;
-  margin: 10px 0;
-}
-
-input {
-  font-weight: bold;
-  font-size: 18px;
-  padding: 5px 10px;
-  margin: 10px 0;
-}
+.container {
+  display: flex;
+  justify-content: center;    
+  max-width: 900px;            
+  margin: 0 auto;
+  gap: 24px;             
+  }
 </style>
